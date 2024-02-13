@@ -1,0 +1,497 @@
+
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/fonts.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/dataquery.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/unique.css' %}" type="text/css">
+    <link rel="shortcut icon" href="{% static 'img/marymesasinfondo.png'  %}" />
+    <title>Carta | Mar y Mesa</title>
+</head>
+
+<body>
+    <div class="base">
+        <div class="encabezado">
+            <img src="{% static 'img/marymesasinfondo.png' %}" >
+            <h2>Mar y Mesa Restaurante</h2> 
+        </div>
+        <div class="container-fluid scrollmenu">
+            <button class="btn btn-outline-info" type="button" id="cazuelas">
+                <div>
+                    <i class="fa-solid fa-shrimp"></i>
+                </div>
+                <div>
+                    Cazuelas y ceviches
+                </div>
+                
+            </button>
+            <button class="btn btn-outline-info" type="button" id="arroces">
+                <div>
+                    <i class="fa-solid fa-bowl-rice"></i>
+                </div>
+                <div>
+                    Arroces
+                </div>
+                
+            </button>
+            <button class="btn btn-outline-info" type="button" id="Pastas">
+                <div>
+                    <i class="fa-solid fa-spaghetti-monster-flying"></i>
+                </div>
+                <div>
+                    Pastas
+                </div>
+                
+            </button>
+            <button class="btn btn-outline-info" type="button" id="filetes">
+                <div>
+                    <i class="fa-solid fa-fish-fins"></i>
+                </div>
+                <div>
+                    Filetes y chuletas
+                </div>
+                
+            </button>
+            <button class="btn btn-outline-info" type="button" id="Pescado">
+                <div>
+                    <i class="fa-solid fa-fish"></i>
+                </div>
+                <div>
+                    Pescados
+                </div>
+                
+            </button>
+            <button class="btn btn-outline-info" type="button" id="adicionales">
+                <div>
+                    <i class="fa-solid fa-utensils"></i>
+                </div>
+                <div>
+                    Adicionales
+                </div>
+                
+            </button>
+            <button class="btn btn-outline-info" type="button" id="bebidas">
+                <div>
+                    <i class="fa-solid fa-martini-glass"></i>
+                </div>
+                <div>
+                    Bebidas
+                </div>
+                
+            </button>
+        </div>
+
+        <div class="container menu-menu">
+            <div class="tab-content" id="nav-tabContent">
+                <div class="menu-uno tab-pane fade show active">
+                    <div class="menu-menu-tittle">
+                        <h3>Cazuelas</h3>
+                    </div>
+                    <div class="menu-menu-cont">
+                        
+                        {% for i in dishes %}
+                        {% if i.tipo  == "Cazuelas" %}
+                        <div class="plato-carta shadow">
+                            <div class="title-plato-carta">
+                            <h6>{{i.nombre}}</h6>
+                            {% if i.description %}
+                            <span>{{i.description}}</span>
+                            {% endif %}
+                            
+                            </div>
+                            <div class="precio-plato-carta">
+                            <h6>{{i.costo}}</h6>
+                            </div>
+                        </div>
+                        {% endif %}
+                            
+                        {% endfor %}
+
+
+                    </div>
+                    <div class="menu-menu-tittle">
+                        <h3>Ceviches</h3>
+                    </div>
+                    <div class="menu-menu-cont">
+                        
+                        {% for i in dishes %}
+                        {% if i.tipo  == "Ceviches" %}
+                        <div class="plato-carta shadow">
+                            <div class="title-plato-carta">
+                            <h6>{{i.nombre}}</h6>
+                            {% if i.description %}
+                            <span>{{i.description}}</span>
+                            {% endif %}
+                            </div>
+                            <div class="precio-plato-carta">
+                            <h6>{{i.costo}}</h6>
+                            </div>
+                        </div>
+                        {% endif %}
+                            
+                        {% endfor %}
+
+
+                    </div>
+                </div>
+                <div class="menu-pastas tab-pane fade">
+                    <div class="menu-menu-tittle">
+                        <h4>Pastas</h4>
+                    </div>
+                    <div class="menu-menu-cont">
+                        
+                        {% for i in dishes %}
+                        {% if i.tipo  == "Pastas" %}
+                        <div class="plato-carta shadow">
+                            <div class="title-plato-carta">
+                            <h6>{{i.nombre}}</h6>
+                            {% if i.description %}
+                            <span>{{i.description}}</span>
+                            {% endif %}
+                            </div>
+                            <div class="precio-plato-carta">
+                            <h6>{{i.costo}}</h6>
+                            </div>
+                        </div>
+                        {% endif %}
+                            
+                        {% endfor %}
+
+
+                    </div>
+                    
+                </div>
+
+                <div class="menu-arroces tab-pane fade">
+                    <div class="menu-menu-tittle">
+                        <h4>Arroces</h4>
+                    </div>
+                    <div class="menu-menu-cont">
+                        
+                        {% for i in dishes %}
+                        {% if i.tipo  == "Arroz" %}
+                        <div class="plato-carta shadow">
+                            <div class="title-plato-carta">
+                            <h6>{{i.nombre}}</h6>
+                            {% if i.description %}
+                            <span>{{i.description}}</span>
+                            {% endif %}
+                            </div>
+                            <div class="precio-plato-carta">
+                            <h6>{{i.costo}}</h6>
+                            </div>
+                        </div>
+                        {% endif %}
+                            
+                        {% endfor %}
+
+
+                    </div>
+                    
+                </div>
+
+                <div class="menu-filetes tab-pane fade">
+                    <div class="menu-menu-tittle">
+                        <h3>Filetes</h3>
+                    </div>
+                    <div class="menu-menu-cont">
+                        
+                        {% for i in dishes %}
+                        {% if i.tipo  == "Filetes" %}
+                        <div class="plato-carta shadow">
+                            <div class="title-plato-carta">
+                            <h6>{{i.nombre}}</h6>
+                            {% if i.description %}
+                            <span>{{i.description}}</span>
+                            {% endif %}
+                            </div>
+                            <div class="precio-plato-carta">
+                            <h6>{{i.costo}}</h6>
+                            </div>
+                        </div>
+                        {% endif %}
+                            
+                        {% endfor %}
+
+
+                    </div>
+                    <div class="menu-menu-tittle">
+                        <h3>Chuletas</h3>
+                    </div>
+                    <div class="menu-menu-cont">
+                        
+                        {% for i in dishes %}
+                        {% if i.tipo  == "Chuletas" %}
+                        <div class="plato-carta shadow">
+                            <div class="title-plato-carta">
+                            <h6>{{i.nombre}}</h6>
+                            {% if i.description %}
+                            <span>{{i.description}}</span>
+                            {% endif %}
+                            </div>
+                            <div class="precio-plato-carta">
+                            <h6>{{i.costo}}</h6>
+                            </div>
+                        </div>
+                        {% endif %}
+                            
+                        {% endfor %}
+
+
+                    </div>
+                </div>
+
+                <div class="menu-fuertes tab-pane fade">
+                    <div class="menu-menu-tittle">
+                        <h3>Tilapias</h3>
+                    </div>
+                    <div class="menu-menu-cont">
+                        
+                        {% for i in dishes %}
+                        {% if i.tipo  == "Tilapias" %}
+                        <div class="plato-carta shadow">
+                            <div class="title-plato-carta">
+                            <h6>{{i.nombre}}</h6>
+                            {% if i.description %}
+                            <span>{{i.description}}</span>
+                            {% endif %}
+                            </div>
+                            <div class="precio-plato-carta">
+                            <h6>{{i.costo}}</h6>
+                            </div>
+                        </div>
+                        {% endif %}
+                            
+                        {% endfor %}
+
+
+                    </div>
+                    <div class="menu-menu-tittle">
+                        <h3>Encocados</h3>
+                    </div>
+                    <div class="menu-menu-cont">
+                        
+                        {% for i in dishes %}
+                        {% if i.tipo  == "Encocados" %}
+                        <div class="plato-carta shadow">
+                            <div class="title-plato-carta">
+                            <h6>{{i.nombre}}</h6>
+                            {% if i.description %}
+                            <span>{{i.description}}</span>
+                            {% endif %}
+                            </div>
+                            <div class="precio-plato-carta">
+                            <h6>{{i.costo}}</h6>
+                            </div>
+                        </div>
+                        {% endif %}
+                            
+                        {% endfor %}
+
+
+                    </div>
+                    <div class="menu-menu-tittle">
+                        <h3>Sudados</h3>
+                    </div>
+                    <div class="menu-menu-cont">
+                        
+                        {% for i in dishes %}
+                        {% if i.tipo  == "Sudados" %}
+                        <div class="plato-carta shadow">
+                            <div class="title-plato-carta">
+                            <h6>{{i.nombre}}</h6>
+                            {% if i.description %}
+                            <span>{{i.description}}</span>
+                            {% endif %}
+                            </div>
+                            <div class="precio-plato-carta">
+                            <h6>{{i.costo}}</h6>
+                            </div>
+                        </div>
+                        {% endif %}
+                            
+                        {% endfor %}
+
+
+                    </div>
+                    <div class="menu-menu-tittle">
+                        <h3>Patacones</h3>
+                    </div>
+                    <div class="menu-menu-cont">
+                        
+                        {% for i in dishes %}
+                        {% if i.tipo  == "Patacones" %}
+                        <div class="plato-carta shadow">
+                            <div class="title-plato-carta">
+                            <h6>{{i.nombre}}</h6>
+                            {% if i.description %}
+                            <span>{{i.description}}</span>
+                            {% endif %}
+                            </div>
+                            <div class="precio-plato-carta">
+                            <h6>{{i.costo}}</h6>
+                            </div>
+                        </div>
+                        {% endif %}
+                            
+                        {% endfor %}
+
+
+                    </div>
+                </div>
+                <div class="menu-bebidas tab-pane fade">
+                    <div class="menu-menu-tittle">
+                        <h4>Bebidas</h4>
+                    </div>
+                    <div class="menu-menu-cont">
+                        
+                        {% for i in dishes %}
+                        {% if i.tipo  == "Jugos y gaseosas" %}
+                        <div class="plato-carta shadow">
+                            <div class="title-plato-carta">
+                            <h6>{{i.nombre}}</h6>
+                            {% if i.description %}
+                            <span>{{i.description}}</span>
+                            {% endif %}
+                            </div>
+                            <div class="precio-plato-carta">
+                            <h6>{{i.costo}}</h6>
+                            </div>
+                        </div>
+                        {% endif %}
+                            
+                        {% endfor %}
+
+
+                    </div>
+                    
+                </div>
+
+
+                <div class="menu-adicionales tab-pane fade">
+                    <div class="menu-menu-tittle">
+                        <h4>Adicionales</h4>
+                    </div>
+                    <div class="menu-menu-cont">
+                        
+                        {% for i in dishes %}
+                        {% if i.tipo  == "Adicionales" %}
+                        <div class="plato-carta shadow">
+                            <div class="title-plato-carta">
+                            <h6>{{i.nombre}}</h6>
+                            {% if i.description %}
+                            <span>{{i.description}}</span>
+                            {% endif %}
+                            </div>
+                            <div class="precio-plato-carta">
+                            <h6>{{i.costo}}</h6>
+                            </div>
+                        </div>
+                        {% endif %}
+                            
+                        {% endfor %}
+
+
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid footer">
+            <h6>Somos Mar y Mesa restaurante | Calle 44 # 4 - 65, Barrio: Las Delicias, Cali - Valle | Pide también en &nbsp; &nbsp;<img src="{% static 'img/logoDidi.png' %}" width="60" height="16"  ></h6> 
+        </div>
+    
+    </div>
+
+
+    
+
+
+
+    <script type="text/javascript"  src="{% static 'js/bootstrap.js' %}"></script>
+    
+
+    <script type="text/javascript"  src="{% static 'js/jquery.js' %}"></script>
+    <script type="text/javascript"  src="{% static 'js/dataqyery.js' %}"></script>
+    <script type="text/javascript"  src="{% static 'js/main.js' %}"></script>
+    <script type="text/javascript"  src="{% static 'js/alert.js' %}"></script>
+
+    <script type="text/javascript">
+      
+        $(document).ready(function () {
+          var cazuelas = document.getElementById("cazuelas"),
+            arroces = document.getElementById("arroces"),
+            Pastas = document.getElementById("Pastas"),
+            filetes = document.getElementById("filetes")
+            Pescado = document.getElementById("Pescado"),
+            adicionales = document.getElementById("adicionales"),
+            bebidas = document.getElementById("bebidas");
+        
+          cazuelas.onclick = function () {
+            $(".tab-pane").removeClass("show active");
+            $(".menu-uno").addClass("show active");
+            $(".btn-outline-info").removeClass("active1");
+            $("#cazuelas").addClass("active1");
+          }
+          arroces.onclick = function () {
+            $(".tab-pane").removeClass("show active");
+            $(".menu-arroces").addClass("show active");
+            $(".btn-outline-info").removeClass("active1");
+            $("#arroces").addClass("active1");
+
+          }
+          Pastas.onclick = function () {
+            $(".tab-pane").removeClass("active");
+            $(".menu-pastas").addClass("show active");
+            $(".btn-outline-info").removeClass("active1");
+            $("#Pastas").addClass("active1");
+          }
+          filetes.onclick = function () {
+            $(".tab-pane").removeClass("active");
+            $(".menu-filetes").addClass("show active");
+            $(".btn-outline-info").removeClass("active1");
+            $("#filetes").addClass("active1");
+          }
+          Pescado.onclick = function () {
+            $(".tab-pane").removeClass("active");
+            $(".menu-fuertes").addClass("show active");
+            $(".btn-outline-info").removeClass("active1");
+            $("#Pescado").addClass("active1");
+          }
+          adicionales.onclick = function () {
+            $(".tab-pane").removeClass("active");
+            $(".menu-adicionales").addClass("show active");
+            $(".btn-outline-info").removeClass("active1");
+            $("#adicionales").addClass("active1");
+          }
+          bebidas.onclick = function () {
+            $(".tab-pane").removeClass("active");
+            $(".menu-bebidas").addClass("show active");
+            $(".btn-outline-info").removeClass("active1");
+            $("#bebidas").addClass("active1");
+          }
+        
+        
+        
+        });
+      
+        
+      
+      
+      </script>
+      
+    
+  
+</body>
+
+</html>
+
+

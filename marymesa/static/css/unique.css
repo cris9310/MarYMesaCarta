@@ -1,0 +1,167 @@
+/* Google font importaciones */
+
+@import url('https://fonts.googleapis.com/css2?family=Protest+Riot&family=Radley&display=swap');
+
+:root {
+    /*colores*/
+
+    --body-color: #e3e7e3;
+    --white-color: #ffffff;
+    --yellow-color: #e2ae2a;
+    --blue-color: #264a61;
+    --blue-clear-color: #004AAD;
+    --pink-color: #ad2262;
+    --coffe-color: #9e7059;
+    --grey-color: #c9cfab;
+
+
+    /* Transicion */
+
+
+}
+
+.encabezado {
+    justify-content: center;
+    display: flex;
+    width: auto;
+    height: 100px;
+    background: var(--blue-color);
+    align-items: center;
+}
+
+.encabezado h2 {
+    font-family: 'Protest Riot', sans-serif;
+    color: var(--yellow-color);
+}
+
+.menu-scroll {
+    height: 80px;
+    padding-top: 30px;
+
+}
+
+
+.menu-scroll .tabbable {
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+}
+
+.menu-scroll .tabbable .btn-outline-danger {
+    white-space: nowrap;
+}
+
+.btn-outline-info {
+    font-family: 'Protest Riot', sans-serif;
+    border-color: var(--blue-color) !important;
+    color: var(--blue-color) !important;
+    margin-right: 20px;
+    width: 150px !important;
+}
+
+
+
+
+.btn-outline-info:hover {
+    color: var(--yellow-color) !important;
+    background-color: var(--blue-color) !important;
+}
+
+.btn-outline-info i {
+    font-size: 28px;
+}
+
+div.scrollmenu {
+    margin: 30px;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.menu-menu-tittle {
+    background-color: var(--blue-color);
+    color: var(--yellow-color);
+    font-family: 'Protest Riot', sans-serif;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+
+
+.plato-carta {
+    display: flex;
+    align-items: center;
+    border: none;
+    height: 90px;
+    margin-top: 20px;
+}
+
+
+
+
+.title-plato-carta {
+    font-family: 'Protest Riot', sans-serif;
+    color: var(--blue-color);
+    border-top: none;
+    flex-basis: 60%;
+    padding: 0 1rem;
+}
+
+.title-plato-carta span {
+    font-family: 'Radley', serif;
+    color: var(--blue-clear-color) !important;
+    opacity: 0.8;
+    font-size: 14px;
+}
+
+.precio-plato-carta {
+    font-family: 'Protest Riot', sans-serif;
+    color: var(--blue-color);
+    display: flex;
+    flex-basis: 15%;
+    text-align: end;
+    justify-content: end;
+    font-weight: bold;
+}
+
+.footer {
+    font-family: 'Protest Riot', sans-serif;
+    justify-content: center;
+    display: flex;
+    width: auto;
+    height: 50px;
+    background: var(--blue-color);
+    color: var(--yellow-color);
+    align-items: center;
+    margin-top: 20px;
+}
+
+.menu-adicionales {
+    width: auto;
+}
+
+
+.active1 {
+    color: var(--yellow-color) !important;
+    background-color: var(--blue-color) !important;
+}
+
+@media (max-width:660px) {
+    .footer h6 {
+        margin-top: 20px;
+        font-size: 0.8em;
+    }
+
+    .footer {
+        margin-top: 20px;
+    }
+
+    .plato-carta {
+        display: flex;
+        align-items: center;
+        border: none;
+        height: 110px;
+        margin-top: 20px;
+    }
+}
